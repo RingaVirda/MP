@@ -1,8 +1,6 @@
-# MP
-Mobile Programming
-It runs and has appropriate icons. I don't know how to translate the organization identifier or organization name 'cause there aren't such things in android manifest. Google found that role of identifier takes package name so used it for that purpuse and put organization name(my *** name) into description, haven't figured out how to view this "description" but it's ot there... somewhere.
+# Programming assignment 3
+I can't explain how long it took for me to break through all this file system shit, especially permissions, why in the hell does one need to specify necessary permissions in manifest and in the same time ask them in real time from the user. And also there is a difference between requests in different sdk levels and in sdk 30 this here app doesn't work 'cause for some reason android tells access granted and literally in the next line throws an UnauthorisedAccessException.
 
-Besides the author of this peace of crap is Tuganskih Alexander of IV-71, if you wasn't able to find a clue of that, i hope you would give a look onto this file.
+Then it was wery difficult to understand and make work all of this fragments in a navigation. For some reason android has 4 different apis at the same time or something, and none of them works because of conflicts. 
 
-# Lab1
-This project contains my translation of swift basics to c# basics. For example, i used operator overloading instead of just static methods for step 7. There wasn't any troubles on the way except for i hadn't realised immidietly that it was ment to be console application and was working with android UI for representation of the log info.
+After all it performs exactly the same as on that vid in assignment. Also switches tabs after being rotated, something that i thought i don't have to face any issues, but here we are i guess.   
