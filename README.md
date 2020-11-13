@@ -4,3 +4,10 @@ I can't explain how long it took for me to break through all this file system sh
 Then it was wery difficult to understand and make work all of this fragments in a navigation. For some reason android has 4 different apis at the same time or something, and none of them works because of conflicts. 
 
 After all it performs exactly the same as on that vid in assignment. Also switches tabs after being rotated, something that i thought i don't have to face any issues, but here we are i guess.   
+
+# Programming assignment 4
+Having some updates here, we've switched to Xamarin Forms 'cause i just don't have the audacity to continue with Native, for me to learn how to do all this animation and navigation stuff only using fragments and basic controls is a level of programming for Win 95. I was there and i don't wont to be there again.
+
+Then there was some weird bugs with tapping events not firing in SwipeView for some reason bu i found a workaround. Also permissions, again. All in all it was not so difficult as i've expected.      
+
+And yes, new projects that correspond for this assignment and onwards are named "MaybeForms". 

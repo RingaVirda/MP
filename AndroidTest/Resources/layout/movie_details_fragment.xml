@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                       android:layout_centerHorizontal="true"
+                       android:id="@+id/movie_details_poster"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@id/movie_details_poster" android:id="@+id/movie_details_title"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@id/movie_details_title" android:id="@+id/movie_details_year"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@id/movie_details_year" android:id="@+id/movie_details_genre"/>
+            <View android:id="@+id/movie_details_divider1"
+                  android:layout_width="match_parent"
+                  android:layout_height="8dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@id/movie_details_divider1" android:id="@+id/movie_details_director"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@id/movie_details_director" android:id="@+id/movie_details_actors"/>
+            <View android:id="@+id/movie_details_divider2"
+                  android:layout_width="match_parent"
+                  android:layout_height="8dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@id/movie_details_divider2" android:id="@+id/movie_details_country"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@id/movie_details_country" android:id="@+id/movie_details_language"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@id/movie_details_language" android:id="@+id/movie_details_production"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@id/movie_details_production" android:id="@+id/movie_details_released"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@id/movie_details_released" android:id="@+id/movie_details_runtime"/>
+            <View android:id="@+id/movie_details_divider3"
+                  android:layout_width="match_parent"
+                  android:layout_height="8dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@id/movie_details_divider3" android:id="@+id/movie_details_awards"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@id/movie_details_awards" android:id="@+id/movie_details_rating"/>
+            <View android:id="@+id/movie_details_divider4"
+                  android:layout_width="match_parent"
+                  android:layout_height="8dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@id/movie_details_divider4" android:id="@+id/movie_details_plot"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

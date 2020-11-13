@@ -10,25 +10,21 @@ namespace AndroidTest.Fragments
 {
     public class MovieFragment : Fragment
     {
-        public static MovieFragment NewInstance(string title, string year, string type, string poster)
+        private Bitmap _poster;
+        private string _imdbID;
+        public static MovieFragment NewInstance(string title, string year, string type, string poster, string imdbID)
         {
             var bundle = new Bundle();
             bundle.PutString("title", title);
             bundle.PutString("year", year);
             bundle.PutString("type", type);
             bundle.PutString("poster", poster);
+            bundle.PutString("imdbID", imdbID);
             return new MovieFragment {Arguments = bundle};
-        }
-
-        public override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            if (container == null) return null;
-            
             View view = inflater.Inflate(Resource.Layout.movie_fragment, container, false);
             var title = view.FindViewById<TextView>(Resource.Id.movie_title);
             title.Text = Arguments.GetString("title");
@@ -37,15 +33,23 @@ namespace AndroidTest.Fragments
             var type = view.FindViewById<TextView>(Resource.Id.movie_type);
             type.Text = Arguments.GetString("type");
 
+            _imdbID = Arguments.GetString("imdbID");
+            
             string posterFile = Path.Combine(Environment.ExternalStorageDirectory.Path,
                 Environment.DirectoryDownloads, $"Posters/{Arguments.GetString("poster")}");
 
-            var poster = File.Exists(posterFile)
+            _poster = File.Exists(posterFile)
                 ? BitmapFactory.DecodeFile(posterFile)
                 : Bitmap.CreateBitmap(300, 466, Bitmap.Config.Argb8888);
             var image = view.FindViewById<ImageView>(Resource.Id.movie_image);
-            image.SetImageBitmap(poster);
+            image.SetImageBitmap(_poster);
 
+            view.FindViewById<ImageView>(Resource.Id.movie_image).Click += (sender, args) =>
+            {
+                Fragment fragment = MovieDetailsFragment.NewInstance(_poster, _imdbID);
+                ((MainActivity) Activity).LoadFragment(fragment);
+            };
+            
             return view;
         }
     }

@@ -57,10 +57,12 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Fragments\ElseFragment.cs" />
+        <Compile Include="Fragments\MovieDetailsFragment.cs" />
         <Compile Include="Fragments\MovieFragment.cs" />
         <Compile Include="Fragments\MoviesListFragment.cs" />
         <Compile Include="MainActivity.cs" />
         <Compile Include="Model\Movie.cs" />
+        <Compile Include="Model\MovieDetails.cs" />
         <Compile Include="Model\SearchJson.cs" />
         <Compile Include="Resources\Resource.Designer.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +88,7 @@
         </AndroidResource>
         <AndroidResource Include="Resources\layout\else_fragment.xml" />
         <AndroidResource Include="Resources\layout\movies_list_fragment.xml" />
+        <AndroidResource Include="Resources\layout\movie_details_fragment.xml" />
         <AndroidResource Include="Resources\layout\movie_fragment.xml" />
         <AndroidResource Include="Resources\menu\bottom_nav_main.xml">
           <SubType>Designer</SubType>
@@ -98,11 +101,7 @@
     <ItemGroup>
         <PackageReference Include="System.Text.Json" Version="5.0.0-rc.2.20475.5" />
         <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
-        <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData.Core" Version="2.2.0.3" />
-        <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="2.2.0.3" />
         <PackageReference Include="Xamarin.Essentials" Version="1.6.0-pre2" />
-        <PackageReference Include="Xamarin.Google.Android.Material" Version="1.1.0.5" />
-        <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4" Version="1.0.0.5" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

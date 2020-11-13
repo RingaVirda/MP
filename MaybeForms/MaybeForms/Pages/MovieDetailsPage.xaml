@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MaybeForms.ViewModel;assembly=MaybeForms"
+             xmlns:model="clr-namespace:MaybeForms.Model;assembly=MaybeForms"
+             Title="{Binding PageTitle}"
+             x:Class="MaybeForms.Pages.MovieDetailsPage">
+    <ContentPage.Content>
+        <ScrollView VerticalScrollBarVisibility="Never">
+            <StackLayout x:DataType="local:MovieDetailsViewModel"
+                         Padding="10"
+                         Spacing="20">
+                <Frame x:Name="PosterFrame" HeightRequest="350" WidthRequest="225" BorderColor="Transparent">
+                    <Image Source="{Binding Details.Poster}" />
+                </Frame>
+                <StackLayout>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Title: " TextColor="Gray" />
+                                <Span Text="{Binding Details.Title}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Year: " TextColor="Gray" />
+                                <Span Text="{Binding Details.Year}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Genre: " TextColor="Gray" />
+                                <Span Text="{Binding Details.Genre}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Director: " TextColor="Gray" />
+                                <Span Text="{Binding Details.Director}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Actors: " TextColor="Gray" />
+                                <Span Text="{Binding Details.Actors}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Country: " TextColor="Gray" />
+                                <Span Text="{Binding Details.Country}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Language: " TextColor="Gray" />
+                                <Span Text="{Binding Details.Language}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Production: " TextColor="Gray" />
+                                <Span Text="{Binding Details.Production}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Released: " TextColor="Gray" />
+                                <Span Text="{Binding Details.Released}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Runtime: " TextColor="Gray" />
+                                <Span Text="{Binding Details.Runtime}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Rating: " TextColor="Gray" />
+                                <Span Text="{Binding Details.Rated}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Awards: " TextColor="Gray" />
+                                <Span Text="{Binding Details.Awards}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Plot: " TextColor="Gray" />
+                            <Span Text="{Binding Details.Plot}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -25,24 +25,25 @@ namespace AndroidTest
                 switch (currentSelected)
                 {
                     case 0:
-                        LoadFragment(Resource.Id.navigation_movies);
+                        LoadNavigation(Resource.Id.navigation_movies);
                         return;
                     case 1:
-                        LoadFragment(Resource.Id.navigation_else);
+                        LoadNavigation(Resource.Id.navigation_else);
                         return;
                 }
             }
-            
-            LoadFragment(Resource.Id.navigation_movies);
+
+            LoadNavigation(Resource.Id.navigation_movies);
         }
 
         private void NavItemSelected(object sender, BottomNavigationView.NavigationItemSelectedEventArgs e)
         {
-            LoadFragment(e.Item.ItemId);
+            LoadNavigation(e.Item.ItemId);
         }
 
         private int currentSelected = 0;
-        private void LoadFragment(int id)
+
+        private void LoadNavigation(int id)
         {
             Fragment fragment = null;
             switch (id)
@@ -59,7 +60,12 @@ namespace AndroidTest
 
             if (fragment == null)
                 return;
+            
+            LoadFragment(fragment);
+        }
 
+        public void LoadFragment(Fragment fragment)
+        {
             FragmentManager.BeginTransaction()
                 .Replace(Resource.Id.content_frame, fragment)
                 .Commit();

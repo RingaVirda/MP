@@ -2,4 +2,6 @@
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
   &lt;Assembly Path="C:\Users\ringa\AppData\Local\JetBrains\BuildTools\ReferenceAssemblies\MonoAndroid\v8.0\Mono.Android.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Users\ringa\.nuget\packages\xamarin.google.android.material\1.1.0.5\lib\monoandroid90\Xamarin.Google.Android.Material.dll" /&gt;&#xD;
-&lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>
+&lt;/AssemblyExplorer&gt;</s:String>
+	
+	</wpf:ResourceDictionary>

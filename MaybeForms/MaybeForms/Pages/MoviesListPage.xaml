@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MaybeForms.ViewModel;assembly=MaybeForms"
+             xmlns:model="clr-namespace:MaybeForms.Model;assembly=MaybeForms"
+             Title="{Binding PageTitle}"
+             x:Name="Page"
+             x:Class="MaybeForms.Pages.MoviesListPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddMovieCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar x:Name="SearchBar"
+                       Placeholder="Query"
+                       TextChanged="SearchBar_OnTextChanged" />
+            <RefreshView Command="{Binding LoadMoviesCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay }"
+                         x:DataType="local:MoviesListVewModel">
+                <CollectionView ItemsSource="{Binding Movies}"
+                                VerticalScrollBarVisibility="Never">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="0, 0, 0, 10" x:DataType="model:Movie">
+                                <SwipeView SwipeStarted="SwipeView_OnSwipeStarted">
+                                    <SwipeView.RightItems>
+                                        <SwipeItems>
+                                            <SwipeItem Text="Delete"
+                                                       IconImageSource="ic_delete.png"
+                                                       BackgroundColor="Red"
+                                                       Command="{Binding Source={x:Reference Page}, Path=BindingContext.DeleteMovie}"
+                                                       CommandParameter="{Binding .}" />
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+                                    <SwipeView.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={x:Reference Page}, Path=BindingContext.MovieTapped}"
+                                                              CommandParameter="{Binding .}" 
+                                                              NumberOfTapsRequired="2"/>
+                                    </SwipeView.GestureRecognizers>
+                                    <SwipeView.Content>
+                                        <Frame Padding="15, 15, 15, 15" BackgroundColor="GhostWhite" CornerRadius="5">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width=".25*" />
+                                                    <ColumnDefinition Width=".65*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="120" />
+                                                </Grid.RowDefinitions>
+                                                <Image Grid.Column="0" x:Name="Poster" Source="{Binding Poster}" />
+                                                <StackLayout Grid.Column="1" Padding="10, 0, 0, 0">
+                                                    <Label Text="{Binding Title}"
+                                                           Style="{DynamicResource ListItemTextStyle}" />
+                                                    <Label Text="{Binding Year}"
+                                                           Style="{DynamicResource ListItemDetailTextStyle}" />
+                                                    <Label Text="{Binding Type}"
+                                                           Style="{DynamicResource ListItemDetailTextStyle}" />
+                                                </StackLayout>
+                                            </Grid>
+                                        </Frame>
+                                    </SwipeView.Content>
+                                </SwipeView>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -4,6 +4,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidTest", "AndroidTest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab1", "Lab1\Lab1.csproj", "{6DAF8D71-B419-4449-9ECD-D2698FCBD1D5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Old", "Old", "{307F7C8A-B7B7-4F43-A0AF-909EFF4B856D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaybeForms", "MaybeForms\MaybeForms\MaybeForms.csproj", "{035BB6FB-B401-4A30-A0E2-FAE40B80F405}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaybeForms.Android", "MaybeForms\MaybeForms.Android\MaybeForms.Android.csproj", "{F3E782CF-7602-4B3C-A61D-7C446FFB8ADC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,5 +26,17 @@ Global
 		{6DAF8D71-B419-4449-9ECD-D2698FCBD1D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DAF8D71-B419-4449-9ECD-D2698FCBD1D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DAF8D71-B419-4449-9ECD-D2698FCBD1D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{035BB6FB-B401-4A30-A0E2-FAE40B80F405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{035BB6FB-B401-4A30-A0E2-FAE40B80F405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{035BB6FB-B401-4A30-A0E2-FAE40B80F405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{035BB6FB-B401-4A30-A0E2-FAE40B80F405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3E782CF-7602-4B3C-A61D-7C446FFB8ADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3E782CF-7602-4B3C-A61D-7C446FFB8ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3E782CF-7602-4B3C-A61D-7C446FFB8ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3E782CF-7602-4B3C-A61D-7C446FFB8ADC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BE92B9C6-82C1-409B-9581-69AFAC188633} = {307F7C8A-B7B7-4F43-A0AF-909EFF4B856D}
+		{6DAF8D71-B419-4449-9ECD-D2698FCBD1D5} = {307F7C8A-B7B7-4F43-A0AF-909EFF4B856D}
 	EndGlobalSection
 EndGlobal
