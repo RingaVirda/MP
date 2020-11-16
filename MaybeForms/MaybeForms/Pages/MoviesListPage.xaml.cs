@@ -30,10 +30,5 @@ namespace MaybeForms.Pages
         {
             _viewModel.OnSearch(SearchBar.Text);
         }
-
-        private void SwipeView_OnSwipeStarted(object sender, SwipeStartedEventArgs e)
-        {
-            var swipe = sender as SwipeView;
-        }
     }
 }

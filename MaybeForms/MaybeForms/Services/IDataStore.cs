@@ -13,7 +13,5 @@ namespace MaybeForms.Services
         Task<bool> DeleteItemAsync(T item);
         Task<T> GetItemAsync(string id);
         Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
-        Task<string> ReadFileAsync(string path);
-        ObservableCollection<Movie> GetSearchResults(string query);
     }
 }

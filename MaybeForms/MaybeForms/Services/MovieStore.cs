@@ -9,11 +9,11 @@ using System.Text.Json;
 
 namespace MaybeForms.Services
 {
-    public class DataStore : IDataStore<Movie>
+    public class MoviesStore : IDataStore<Movie>
     {
         private List<Movie> _movies;
 
-        public DataStore(string resourcesPath)
+        public MoviesStore(string resourcesPath)
         {
             ResourcesPath = resourcesPath;
             var titlesJson = File.ReadAllText($"{ResourcesPath}/MoviesList.json");

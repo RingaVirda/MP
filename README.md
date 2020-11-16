@@ -11,3 +11,6 @@ Having some updates here, we've switched to Xamarin Forms 'cause i just don't ha
 Then there was some weird bugs with tapping events not firing in SwipeView for some reason bu i found a workaround. Also permissions, again. All in all it was not so difficult as i've expected.      
 
 And yes, new projects that correspond for this assignment and onwards are named "MaybeForms". 
+
+# Programming assignment 5
+There wasn't any issues in this assignment, except for the way to represent images returned from dependency code and i ended up with hawing path to file 'couse it is permanent.   

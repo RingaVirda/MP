@@ -47,7 +47,7 @@ namespace MaybeForms.ViewModel
                 _posterFrame.IsVisible = false;
                 return;
             }  
-            var jsonString = await MovieStore.ReadFileAsync($"{imdbID}.json");
+            var jsonString = await ((MoviesStore)MovieStore).ReadFileAsync($"{imdbID}.json");
             var details = JsonSerializer.Deserialize<MovieDetails>(jsonString);
             if (details.Poster == string.Empty)
             {
@@ -55,7 +55,7 @@ namespace MaybeForms.ViewModel
             }
             else
             {
-                details.Poster = Path.Combine(((DataStore) MovieStore).ResourcesPath, "Posters", details.Poster);
+                details.Poster = Path.Combine(((MoviesStore) MovieStore).ResourcesPath, "Posters", details.Poster);
             }
             Details = details;
         }

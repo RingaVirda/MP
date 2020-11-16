@@ -27,6 +27,7 @@
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
         <AndroidLinkMode>None</AndroidLinkMode>
+        <AndroidSupportedAbis>armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
         <DebugSymbols>true</DebugSymbols>
@@ -61,6 +62,7 @@
         <Compile Include="MainActivity.cs" />
         <Compile Include="Resources\Resource.Designer.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Services\ImagePicker.cs" />
     </ItemGroup>
     <ItemGroup>
         <None Include="Resources\AboutResources.txt" />
@@ -69,14 +71,19 @@
     </ItemGroup>
     <ItemGroup>
         <AndroidResource Include="Resources\drawable-hdpi\ic_delete.png" />
+        <AndroidResource Include="Resources\drawable-hdpi\ic_images.png" />
         <AndroidResource Include="Resources\drawable-hdpi\ic_movies.png" />
         <AndroidResource Include="Resources\drawable-mdpi\ic_delete.png" />
+        <AndroidResource Include="Resources\drawable-mdpi\ic_images.png" />
         <AndroidResource Include="Resources\drawable-mdpi\ic_movies.png" />
         <AndroidResource Include="Resources\drawable-xhdpi\ic_delete.png" />
+        <AndroidResource Include="Resources\drawable-xhdpi\ic_images.png" />
         <AndroidResource Include="Resources\drawable-xhdpi\ic_movies.png" />
         <AndroidResource Include="Resources\drawable-xxhdpi\ic_delete.png" />
+        <AndroidResource Include="Resources\drawable-xxhdpi\ic_images.png" />
         <AndroidResource Include="Resources\drawable-xxhdpi\ic_movies.png" />
         <AndroidResource Include="Resources\drawable-xxxhdpi\ic_delete.png" />
+        <AndroidResource Include="Resources\drawable-xxxhdpi\ic_images.png" />
         <AndroidResource Include="Resources\drawable-xxxhdpi\ic_movies.png" />
         <AndroidResource Include="Resources\layout\Tabbar.axml" />
         <AndroidResource Include="Resources\layout\Toolbar.axml" />
@@ -93,9 +100,6 @@
             <Project>{0A9D2B90-E214-47C4-9FCE-84C7B6DC9F3E}</Project>
             <Name>MaybeForms</Name>
         </ProjectReference>
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Services" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

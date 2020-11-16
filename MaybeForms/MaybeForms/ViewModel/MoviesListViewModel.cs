@@ -53,7 +53,7 @@ namespace MaybeForms.ViewModel
                 {
                     if (movie.imdbID != null)
                     {
-                        movie.Poster = Path.Combine(((DataStore) MovieStore).ResourcesPath,
+                        movie.Poster = Path.Combine(((MoviesStore) MovieStore).ResourcesPath,
                             "Posters",
                             movie.Poster);
                     }
@@ -98,7 +98,7 @@ namespace MaybeForms.ViewModel
 
         public void OnSearch(string query)
         {
-            Movies = MovieStore.GetSearchResults(query);
+            Movies = ((MoviesStore)MovieStore).GetSearchResults(query);
         }
     }
 }

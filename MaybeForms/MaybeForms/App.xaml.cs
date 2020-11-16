@@ -11,12 +11,14 @@ namespace MaybeForms
     public partial class App : Application
     {
         public static IDataStore<Movie> MovieStore;
+        public static IDataStore<Images> ImagesStore;
         
         public App(string resourcesPath)
         {
             InitializeComponent();
             
-            MovieStore = new DataStore(resourcesPath);
+            MovieStore = new MoviesStore(resourcesPath);
+            ImagesStore = new ImagesStore();
             
             MainPage = new AppShell();
         }
