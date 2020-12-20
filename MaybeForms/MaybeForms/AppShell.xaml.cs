@@ -16,6 +16,7 @@ namespace MaybeForms
             Routing.RegisterRoute(nameof(MoviesListPage), typeof(MoviesListPage));
             Routing.RegisterRoute(nameof(MovieDetailsPage), typeof(MovieDetailsPage));
             Routing.RegisterRoute(nameof(NewMoviePage), typeof(NewMoviePage));
+            Routing.RegisterRoute(nameof(ChartsPage), typeof(ChartsPage));
         }
     }
 }

@@ -14,3 +14,6 @@ And yes, new projects that correspond for this assignment and onwards are named 
 
 # Programming assignment 5
 There wasn't any issues in this assignment, except for the way to represent images returned from dependency code and i ended up with hawing path to file 'couse it is permanent.   
+
+# Programming Assignment 6
+This issue was pretty chill, i already used oxyPlot library for a long time so there wasn't any troubles here.

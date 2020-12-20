@@ -41,6 +41,7 @@ namespace MaybeForms.Android
             Forms.SetFlags("SwipeView_Experimental");
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
             LoadApplication(new App(recourcesPath));
 
             Instance = this;

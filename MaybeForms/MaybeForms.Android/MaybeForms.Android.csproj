@@ -70,18 +70,23 @@
         <None Include="Properties\AndroidManifest.xml" />
     </ItemGroup>
     <ItemGroup>
+        <AndroidResource Include="Resources\drawable-hdpi\ic_chart.png" />
         <AndroidResource Include="Resources\drawable-hdpi\ic_delete.png" />
         <AndroidResource Include="Resources\drawable-hdpi\ic_images.png" />
         <AndroidResource Include="Resources\drawable-hdpi\ic_movies.png" />
+        <AndroidResource Include="Resources\drawable-mdpi\ic_chart.png" />
         <AndroidResource Include="Resources\drawable-mdpi\ic_delete.png" />
         <AndroidResource Include="Resources\drawable-mdpi\ic_images.png" />
         <AndroidResource Include="Resources\drawable-mdpi\ic_movies.png" />
+        <AndroidResource Include="Resources\drawable-xhdpi\ic_chart.png" />
         <AndroidResource Include="Resources\drawable-xhdpi\ic_delete.png" />
         <AndroidResource Include="Resources\drawable-xhdpi\ic_images.png" />
         <AndroidResource Include="Resources\drawable-xhdpi\ic_movies.png" />
+        <AndroidResource Include="Resources\drawable-xxhdpi\ic_chart.png" />
         <AndroidResource Include="Resources\drawable-xxhdpi\ic_delete.png" />
         <AndroidResource Include="Resources\drawable-xxhdpi\ic_images.png" />
         <AndroidResource Include="Resources\drawable-xxhdpi\ic_movies.png" />
+        <AndroidResource Include="Resources\drawable-xxxhdpi\ic_chart.png" />
         <AndroidResource Include="Resources\drawable-xxxhdpi\ic_delete.png" />
         <AndroidResource Include="Resources\drawable-xxxhdpi\ic_images.png" />
         <AndroidResource Include="Resources\drawable-xxxhdpi\ic_movies.png" />

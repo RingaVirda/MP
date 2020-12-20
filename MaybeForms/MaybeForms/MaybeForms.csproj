@@ -2,7 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <LangVersion>9</LangVersion>
+        <LangVersion>8</LangVersion>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -11,6 +12,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="OxyPlot.Xamarin.Forms" Version="1.1.0-unstable0011" />
         <PackageReference Include="System.Text.Json" Version="5.0.0" />
         <PackageReference Include="TinyIoC" Version="1.4.0-alpha1">
           <PrivateAssets>all</PrivateAssets>

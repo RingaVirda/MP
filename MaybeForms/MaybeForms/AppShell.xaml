@@ -26,5 +26,6 @@
     <TabBar>
         <ShellContent Title="Movies" Route="MoviesPage" Icon="ic_movies.png" ContentTemplate="{DataTemplate local:MoviesListPage}" />
         <ShellContent Title="Images" Route="" Icon="ic_images.png" ContentTemplate="{DataTemplate local:ImagesPage}" />
+        <ShellContent Title="Charts" Route="" Icon="ic_chart.png" ContentTemplate="{DataTemplate local:ChartsPage}" />
     </TabBar>
 </Shell>
