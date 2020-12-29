@@ -14,6 +14,7 @@
                 <Frame x:Name="PosterFrame" HeightRequest="350" WidthRequest="225" BorderColor="Transparent">
                     <Image Source="{Binding Details.Poster}" />
                 </Frame>
+                <ActivityIndicator IsRunning="{Binding IsBusy}"></ActivityIndicator>
                 <StackLayout>
                     <Label>
                         <Label.FormattedText>

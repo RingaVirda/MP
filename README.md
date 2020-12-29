@@ -17,3 +17,6 @@ There wasn't any issues in this assignment, except for the way to represent imag
 
 # Programming Assignment 6
 This issue was pretty chill, i already used oxyPlot library for a long time so there wasn't any troubles here.
+
+# Programming Assignment 7
+Taking into consideration that i was already using dependency service to get data it was a matter of only rewrighting some lines in two classes or something. ActivityIndicator wasn't working at first for reasons of overlapping binding contexts and it took some time to acknowledge that. 

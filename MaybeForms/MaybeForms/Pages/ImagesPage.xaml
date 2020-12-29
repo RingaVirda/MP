@@ -30,18 +30,48 @@
                                 <RowDefinition Height="100" />
                                 <RowDefinition Height="100" />
                             </Grid.RowDefinitions>
-                            <Image Grid.Column="0" Grid.Row="0" Source="{Binding Image0}" />
-                            <Image Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2"
+                            <Image x:Name="Image0" Grid.Column="0" Grid.Row="0" Source="{Binding Image0}" />
+                            <ActivityIndicator x:DataType="Image" Grid.Column="0" Grid.Row="0"
+                                               BindingContext="{x:Reference Image0}"
+                                               IsRunning="{Binding IsLoading}" />
+                            <Image x:Name="Image1" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2"
                                    Source="{Binding Image1}" />
-                            <Image Grid.Column="3" Grid.Row="0" Source="{Binding Image2}" />
-                            <Image Grid.Column="0" Grid.Row="1" Source="{Binding Image3}" />
-                            <Image Grid.Column="3" Grid.Row="1" Source="{Binding Image4}" />
-                            <Image Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2"
+                            <ActivityIndicator x:DataType="Image" Grid.Column="1" Grid.Row="0"
+                                               BindingContext="{x:Reference Image1}"
+                                               IsRunning="{Binding IsLoading}" />
+                            <Image x:Name="Image2" Grid.Column="3" Grid.Row="0" Source="{Binding Image2}" />
+                            <ActivityIndicator x:DataType="Image" Grid.Column="3" Grid.Row="0"
+                                               BindingContext="{x:Reference Image2}"
+                                               IsRunning="{Binding IsLoading}" />
+                            <Image x:Name="Image3" Grid.Column="0" Grid.Row="1" Source="{Binding Image3}" />
+                            <ActivityIndicator x:DataType="Image" Grid.Column="0" Grid.Row="1"
+                                               BindingContext="{x:Reference Image3}"
+                                               IsRunning="{Binding IsLoading}" />
+                            <Image x:Name="Image4" Grid.Column="3" Grid.Row="1" Source="{Binding Image4}" />
+                            <ActivityIndicator x:DataType="Image" Grid.Column="3" Grid.Row="1"
+                                               BindingContext="{x:Reference Image4}"
+                                               IsRunning="{Binding IsLoading}" />
+                            <Image x:Name="Image5" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2"
                                    Source="{Binding Image5}" />
-                            <Image Grid.Column="2" Grid.Row="2" Source="{Binding Image6}" />
-                            <Image Grid.Column="3" Grid.Row="2" Source="{Binding Image7}" />
-                            <Image Grid.Column="2" Grid.Row="3" Source="{Binding Image8}" />
-                            <Image Grid.Column="3" Grid.Row="3" Source="{Binding Image9}" />
+                            <ActivityIndicator x:DataType="Image" Grid.Column="0" Grid.Row="2"
+                                               BindingContext="{x:Reference Image5}"
+                                               IsRunning="{Binding IsLoading}" />
+                            <Image x:Name="Image6" Grid.Column="2" Grid.Row="2" Source="{Binding Image6}" />
+                            <ActivityIndicator x:DataType="Image" Grid.Column="2" Grid.Row="2"
+                                               BindingContext="{x:Reference Image6}"
+                                               IsRunning="{Binding IsLoading}" />
+                            <Image x:Name="Image7" Grid.Column="3" Grid.Row="2" Source="{Binding Image7}" />
+                            <ActivityIndicator x:DataType="Image" Grid.Column="3" Grid.Row="2"
+                                               BindingContext="{x:Reference Image7}"
+                                               IsRunning="{Binding IsLoading}" />
+                            <Image x:Name="Image8" Grid.Column="2" Grid.Row="3" Source="{Binding Image8}" />
+                            <ActivityIndicator x:DataType="Image" Grid.Column="2" Grid.Row="3"
+                                               BindingContext="{x:Reference Image8}"
+                                               IsRunning="{Binding IsLoading}" />
+                            <Image x:Name="Image9" Grid.Column="3" Grid.Row="3" Source="{Binding Image9}" />
+                            <ActivityIndicator x:DataType="Image" Grid.Column="3" Grid.Row="3"
+                                               BindingContext="{x:Reference Image9}"
+                                               IsRunning="{Binding IsLoading}" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

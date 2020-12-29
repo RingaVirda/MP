@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.IO;
+using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
 using MaybeForms.Model;
-using MaybeForms.Services;
 using Xamarin.Forms;
 
 namespace MaybeForms.ViewModel
@@ -13,6 +10,7 @@ namespace MaybeForms.ViewModel
     [QueryProperty(nameof(ImdbID), nameof(ImdbID))]
     public class MovieDetailsViewModel : ViewModelBase
     {
+        private string url = "http://www.omdbapi.com/?apikey=7e9fe69e&i={0}";
         private readonly Frame _posterFrame;
         private string _imdbID;
         private MovieDetails _details;
@@ -24,6 +22,7 @@ namespace MaybeForms.ViewModel
             _details = new MovieDetails();
         }
 
+        public bool IsLoading { get; set; }
         public MovieDetails Details
         {
             get => _details;
@@ -42,22 +41,40 @@ namespace MaybeForms.ViewModel
 
         public async Task LoadDetails(string imdbID)
         {
+            IsLoading = true;
             if (imdbID == string.Empty)
             {
-                _posterFrame.IsVisible = false;
+                _posterFrame.IsEnabled = false;
                 return;
-            }  
-            var jsonString = await ((MoviesStore)MovieStore).ReadFileAsync($"{imdbID}.json");
-            var details = JsonSerializer.Deserialize<MovieDetails>(jsonString);
-            if (details.Poster == string.Empty)
-            {
-                _posterFrame.IsVisible = false;
             }
-            else
+
+            try
             {
-                details.Poster = Path.Combine(((MoviesStore) MovieStore).ResourcesPath, "Posters", details.Poster);
+                using (WebClient client = new WebClient())
+                {
+                    var jsonString = client.DownloadString(string.Format(url, imdbID));
+                    var details = JsonSerializer.Deserialize<MovieDetails>(jsonString);
+                    if (details.Poster == string.Empty || details.Poster == "N/A")
+                    {
+                        _posterFrame.IsEnabled = false;
+                    }
+                    else
+                    {
+                        details.Poster = details.Poster;
+                    }
+
+                    Details = details;
+                }
             }
-            Details = details;
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            finally
+            {
+                IsLoading = false;
+            }
         }
     }
 }

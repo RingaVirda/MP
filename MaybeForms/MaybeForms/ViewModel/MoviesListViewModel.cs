@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.IO;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using MaybeForms.Annotations;
 using MaybeForms.Model;
 using MaybeForms.Pages;
 using MaybeForms.Services;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace MaybeForms.ViewModel
 {
@@ -21,7 +18,7 @@ namespace MaybeForms.ViewModel
         public MoviesListVewModel()
         {
             PageTitle = "Movies";
-
+            
             LoadMoviesCommand = new Command(async () => await LoadMovies());
             MovieTapped = new Command<Movie>(OnMovieSelected);
             AddMovieCommand = new Command(OnAddMovie);
@@ -29,8 +26,8 @@ namespace MaybeForms.ViewModel
 
             Movies = new ObservableCollection<Movie>();
         }
-
-
+        
+        public bool IsLoading { get; set; }
         public Command LoadMoviesCommand { get; }
         public Command MovieTapped { get; }
         public Command AddMovieCommand { get; }
@@ -45,21 +42,17 @@ namespace MaybeForms.ViewModel
         private async Task LoadMovies()
         {
             IsBusy = true;
+            IsLoading = true;
             try
             {
                 Movies.Clear();
                 var movies = await MovieStore.GetItemsAsync();
-                foreach (var movie in movies)
+                if (movies.Count() == 0)
                 {
-                    if (movie.imdbID != null)
-                    {
-                        movie.Poster = Path.Combine(((MoviesStore) MovieStore).ResourcesPath,
-                            "Posters",
-                            movie.Poster);
-                    }
-
-                    Movies.Add(movie);
+                    return;
                 }
+                movies.ForEach(m => Movies.Add(m));
+                IsLoading = false;
             }
             catch (Exception e)
             {
@@ -96,9 +89,10 @@ namespace MaybeForms.ViewModel
             await LoadMovies();
         }
 
-        public void OnSearch(string query)
+        public async void OnSearch(string query)
         {
-            Movies = ((MoviesStore)MovieStore).GetSearchResults(query);
+            IsLoading = true;
+            await ((MoviesStore)MovieStore).GetSearchResults(query, this);
         }
     }
 }

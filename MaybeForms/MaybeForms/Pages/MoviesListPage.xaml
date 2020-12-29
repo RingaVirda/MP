@@ -15,56 +15,67 @@
             <SearchBar x:Name="SearchBar"
                        Placeholder="Query"
                        TextChanged="SearchBar_OnTextChanged" />
-            <RefreshView Command="{Binding LoadMoviesCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay }"
-                         x:DataType="local:MoviesListVewModel">
-                <CollectionView ItemsSource="{Binding Movies}"
-                                VerticalScrollBarVisibility="Never">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Frame Padding="0, 0, 0, 10" x:DataType="model:Movie">
-                                <SwipeView>
-                                    <SwipeView.RightItems>
-                                        <SwipeItems>
-                                            <SwipeItem Text="Delete"
-                                                       IconImageSource="ic_delete.png"
-                                                       BackgroundColor="Red"
-                                                       Command="{Binding Source={x:Reference Page}, Path=BindingContext.DeleteMovie}"
-                                                       CommandParameter="{Binding .}" />
-                                        </SwipeItems>
-                                    </SwipeView.RightItems>
-                                    <SwipeView.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding Source={x:Reference Page}, Path=BindingContext.MovieTapped}"
-                                                              CommandParameter="{Binding .}" 
-                                                              NumberOfTapsRequired="2"/>
-                                    </SwipeView.GestureRecognizers>
-                                    <SwipeView.Content>
-                                        <Frame Padding="15, 15, 15, 15" BackgroundColor="GhostWhite" CornerRadius="5">
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width=".25*" />
-                                                    <ColumnDefinition Width=".65*" />
-                                                </Grid.ColumnDefinitions>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="120" />
-                                                </Grid.RowDefinitions>
-                                                <Image Grid.Column="0" x:Name="Poster" Source="{Binding Poster}" />
-                                                <StackLayout Grid.Column="1" Padding="10, 0, 0, 0">
-                                                    <Label Text="{Binding Title}"
-                                                           Style="{DynamicResource ListItemTextStyle}" />
-                                                    <Label Text="{Binding Year}"
-                                                           Style="{DynamicResource ListItemDetailTextStyle}" />
-                                                    <Label Text="{Binding Type}"
-                                                           Style="{DynamicResource ListItemDetailTextStyle}" />
-                                                </StackLayout>
-                                            </Grid>
-                                        </Frame>
-                                    </SwipeView.Content>
-                                </SwipeView>
-                            </Frame>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </RefreshView>
+            <AbsoluteLayout VerticalOptions="Fill">
+                <RefreshView Command="{Binding LoadMoviesCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay }"
+                             x:DataType="local:MoviesListVewModel" AbsoluteLayout.LayoutFlags="All"
+                             AbsoluteLayout.LayoutBounds="0,0,1,1">
+                    <CollectionView ItemsSource="{Binding Movies}"
+                                    VerticalScrollBarVisibility="Never">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="0, 0, 0, 10" x:DataType="model:Movie">
+                                    <SwipeView>
+                                        <SwipeView.RightItems>
+                                            <SwipeItems>
+                                                <SwipeItem Text="Delete"
+                                                           IconImageSource="ic_delete.png"
+                                                           BackgroundColor="Red"
+                                                           Command="{Binding Source={x:Reference Page}, Path=BindingContext.DeleteMovie}"
+                                                           CommandParameter="{Binding .}" />
+                                            </SwipeItems>
+                                        </SwipeView.RightItems>
+                                        <SwipeView.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Command="{Binding Source={x:Reference Page}, Path=BindingContext.MovieTapped}"
+                                                CommandParameter="{Binding .}"
+                                                NumberOfTapsRequired="2" />
+                                        </SwipeView.GestureRecognizers>
+                                        <SwipeView.Content>
+                                            <Frame Padding="15, 15, 15, 15" BackgroundColor="GhostWhite"
+                                                   CornerRadius="5">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width=".25*" />
+                                                        <ColumnDefinition Width=".65*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="120" />
+                                                    </Grid.RowDefinitions>
+                                                    <Image x:Name="Poster" Grid.Column="0" Source="{Binding Poster}" />
+                                                    <ActivityIndicator x:DataType="Image"
+                                                                       Grid.Column="0"
+                                                                       BindingContext="{x:Reference Poster}"
+                                                                       IsRunning="{Binding IsLoading}" />
+                                                    <StackLayout Grid.Column="1" Padding="10, 0, 0, 0">
+                                                        <Label Text="{Binding Title}"
+                                                               Style="{DynamicResource ListItemTextStyle}" />
+                                                        <Label Text="{Binding Year}"
+                                                               Style="{DynamicResource ListItemDetailTextStyle}" />
+                                                        <Label Text="{Binding Type}"
+                                                               Style="{DynamicResource ListItemDetailTextStyle}" />
+                                                    </StackLayout>
+                                                </Grid>
+                                            </Frame>
+                                        </SwipeView.Content>
+                                    </SwipeView>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </RefreshView>
+                <ActivityIndicator IsRunning="{Binding IsLoading}" AbsoluteLayout.LayoutFlags="PositionProportional"
+                                   AbsoluteLayout.LayoutBounds=".5,.5,-1,-1" />
+            </AbsoluteLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
